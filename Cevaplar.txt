@@ -1,0 +1,12 @@
+﻿
+6) Benchmark sonuçlarındanda görüleceği üzere for döngüsü hız konusunda ön plana çıkmaktadır.
+Çünkü index ile dizinin elemanlarına direk erişim sağyalabilmektedir ve foreach döngüsünde olduğu gibi dizinin elemanlarda bir değişim olup olmadığını kontrol etmemektedir.
+
+| Method      | Iterations | Mean        | Error     | StdDev      | Median      |
+|------------ |----------- |------------:|----------:|------------:|------------:|
+| ForLoop     | 1000       |    757.9 ns |  23.42 ns |    67.57 ns |    734.5 ns |
+| ForeachLoop | 1000       |    979.7 ns |  19.43 ns |    42.24 ns |    968.1 ns |
+| ParallelFor | 1000       | 19,196.7 ns | 469.04 ns | 1,360.78 ns | 19,038.6 ns |
+| DoLoop      | 1000       |    837.5 ns |  24.60 ns |    69.38 ns |    823.7 ns |
+
+5) Serileştirme için metin tabanlı XML, JSON, YAML gibi formatlar kullanılabileceği gibi binary tabanlı MessagePack ve Protocol Buffers kullanılabilir. Büyük veri ile çalışılacaksa, binary tabanlı serileştirme metin tabanlı serileştirmeden hızlı olacağı ve bandwidth açısından daha etkili olacağı için MessagePack gibi binary tabanlı serileştirme yöntemlerini kullanırım.
